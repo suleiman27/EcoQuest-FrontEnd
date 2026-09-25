@@ -1609,7 +1609,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                             reviewMessage.textContent =
-                                "✅ Thank you! Your review has been submitted and is awaiting approval.";
+                                "✅ Thank you! Your review has been submitted.";
 
                         }
 
