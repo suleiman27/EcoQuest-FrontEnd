@@ -2869,26 +2869,45 @@ select:focus{
    LANGUAGE SELECTOR
 ========================================= */
 
-.language-selector {
-    padding: 10px 12px;
-    border: 1px solid var(--border-color, #ddd);
-    border-radius: 8px;
-    background: var(--card-bg, #fff);
+.language-menu {
+    display: flex;
+    align-items: center;
+}
+
+#language-selector {
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+    background: transparent;
     color: inherit;
     font-size: 14px;
     cursor: pointer;
     outline: none;
 }
 
-.language-selector:focus {
-    border-color: #2e7d32;
+#language-selector option {
+    background: #ffffff;
+    color: #222222;
 }
+
+#language-selector:focus {
+    outline: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
 
-    .language-selector {
+    .language-menu {
         width: 100%;
-        margin-bottom: 8px;
+        margin-top: 10px;
+    }
+
+    #language-selector {
+        width: 100%;
     }
 
 }
