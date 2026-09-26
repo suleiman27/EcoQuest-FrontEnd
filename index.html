@@ -115,24 +115,33 @@
 
                 <!-- Navigation Buttons -->
 
-                <div class="nav-actions">
+               
+<div class="nav-actions">
 
-                    <button
-                        id="dark-mode-toggle"
-                        class="btn btn-outline"
-                        aria-label="Toggle Dark Mode">
+    <!-- Language Selector -->
+    <select id="language-selector" class="language-selector" aria-label="Select Language">
+        <option value="en">🇬🇧 English</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+    </select>
 
-                        🌙
+    <button
+        id="dark-mode-toggle"
+        class="btn btn-outline"
+        aria-label="Toggle Dark Mode">
 
-                    </button>
+        🌙
 
-                    <a href="#booking" class="btn btn-primary">
+    </button>
 
-                        Book Your Safari
+    <a href="#booking" class="btn btn-primary" data-i18n="bookSafari">
 
-                    </a>
+        Book Your Safari
 
-                </div>
+    </a>
+
+</div>
 
             </nav>
 
