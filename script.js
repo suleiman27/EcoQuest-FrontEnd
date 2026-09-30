@@ -357,201 +357,290 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ======================================================
-    // BOOKING FORM
-    // ======================================================
+   ```javascript
+// ======================================================
+// BOOKING FORM
+// ======================================================
 
-    const citizenship =
-        document.getElementById("citizenship");
+const citizenship =
+    document.getElementById("citizenship");
 
-    const idNumber =
-        document.getElementById("idNumber");
+const idNumber =
+    document.getElementById("idNumber");
 
-    const passportNumber =
-        document.getElementById("passportNumber");
-
-
-    if (citizenship) {
-
-        citizenship.addEventListener(
-            "change",
-            () => {
-
-                if (idNumber) {
-
-                    idNumber.style.display = "none";
-
-                }
-
-                if (passportNumber) {
-
-                    passportNumber.style.display = "none";
-
-                }
+const passportNumber =
+    document.getElementById("passportNumber");
 
 
-                if (
-                    citizenship.value === "citizen" &&
-                    idNumber
-                ) {
+// ======================================================
+// CITIZENSHIP
+// ======================================================
 
-                    idNumber.style.display = "block";
+if (citizenship) {
 
-                }
+    citizenship.addEventListener(
+        "change",
+        () => {
 
+            if (idNumber) {
 
-                if (
-                    citizenship.value === "non-citizen" &&
-                    passportNumber
-                ) {
-
-                    passportNumber.style.display = "block";
-
-                }
+                idNumber.style.display = "none";
 
             }
-        );
 
-    }
+            if (passportNumber) {
 
-
-    const bookingForm =
-        document.getElementById("booking-form");
-
-
-    if (bookingForm) {
-
-        bookingForm.addEventListener(
-            "submit",
-            async e => {
-
-                e.preventDefault();
-
-
-                const formData =
-                    new FormData(bookingForm);
-
-                const data =
-                    Object.fromEntries(
-                        formData.entries()
-                    );
-
-
-                console.log(
-                    "Booking data being sent:",
-                    data
-                );
-
-
-                try {
-
-                    const response =
-                        await fetch(
-                            `${API_BASE}/bookings`,
-                            {
-                                method: "POST",
-
-                                headers: {
-                                    "Content-Type":
-                                        "application/json"
-                                },
-
-                                body:
-                                    JSON.stringify(data)
-                            }
-                        );
-
-
-                    const result =
-                        await response.json();
-
-
-                    console.log(
-                        "Booking response:",
-                        result
-                    );
-
-
-                    if (
-                        response.ok &&
-                        (
-                            result.success ||
-                            !result.error
-                        )
-                    ) {
-
-                        alert(
-                            "Your safari booking has been received. We will contact you shortly."
-                        );
-
-
-                        bookingForm.reset();
-
-
-                        if (idNumber) {
-
-                            idNumber.style.display =
-                                "none";
-
-                        }
-
-                        if (passportNumber) {
-
-                            passportNumber.style.display =
-                                "none";
-
-                        }
-
-                    } else {
-
-                        alert(
-                            result.message ||
-                            "Booking could not be completed."
-                        );
-
-                    }
-
-                } catch (err) {
-
-                    console.error(
-                        "Booking Error:",
-                        err
-                    );
-
-
-                    alert(
-                        "Server unavailable. Please try again later."
-                    );
-
-                }
+                passportNumber.style.display = "none";
 
             }
-        );
 
-    }
-    const dateWrapper = document.querySelector('.date-input-wrapper');
-const realDateInput = document.querySelector('.real-date-input');
-const datePlaceholder = document.querySelector('.date-placeholder');
 
-if (dateWrapper && realDateInput && datePlaceholder) {
+            if (
+                citizenship.value === "citizen" &&
+                idNumber
+            ) {
 
-    realDateInput.addEventListener('change', function () {
+                idNumber.style.display = "block";
 
-        if (this.value) {
-            const date = new Date(this.value + 'T00:00:00');
+            }
 
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const year = date.getFullYear();
 
-            datePlaceholder.value = `${month}/${day}/${year}`;
-            dateWrapper.classList.add('has-date');
+            if (
+                citizenship.value === "non-citizen" &&
+                passportNumber
+            ) {
+
+                passportNumber.style.display = "block";
+
+            }
+
         }
-    });
+    );
 
 }
 
 
+// ======================================================
+// BOOKING FORM SUBMISSION
+// ======================================================
+
+const bookingForm =
+    document.getElementById("booking-form");
+
+
+if (bookingForm) {
+
+    bookingForm.addEventListener(
+        "submit",
+        async e => {
+
+            e.preventDefault();
+
+
+            const formData =
+                new FormData(bookingForm);
+
+
+            const data =
+                Object.fromEntries(
+                    formData.entries()
+                );
+
+
+            console.log(
+                "Booking data being sent:",
+                data
+            );
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${API_BASE}/bookings`,
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(data)
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                console.log(
+                    "Booking response:",
+                    result
+                );
+
+
+                if (
+                    response.ok &&
+                    (
+                        result.success ||
+                        !result.error
+                    )
+                ) {
+
+                    alert(
+                        "Your safari booking has been received. We will contact you shortly."
+                    );
+
+
+                    bookingForm.reset();
+
+
+                    if (idNumber) {
+
+                        idNumber.style.display =
+                            "none";
+
+                    }
+
+
+                    if (passportNumber) {
+
+                        passportNumber.style.display =
+                            "none";
+
+                    }
+
+                } else {
+
+                    alert(
+                        result.message ||
+                        "Booking could not be completed."
+                    );
+
+                }
+
+
+            } catch (err) {
+
+                console.error(
+                    "Booking Error:",
+                    err
+                );
+
+
+                alert(
+                    "Server unavailable. Please try again later."
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+// ======================================================
+// BOOKING DATE FIELD
+// ======================================================
+
+const dateWrapper =
+    document.querySelector(
+        ".date-input-wrapper"
+    );
+
+const realDateInput =
+    document.querySelector(
+        ".real-date-input"
+    );
+
+const datePlaceholder =
+    document.querySelector(
+        ".date-placeholder"
+    );
+
+
+if (
+    dateWrapper &&
+    realDateInput &&
+    datePlaceholder
+) {
+
+    // When the user selects a date
+    realDateInput.addEventListener(
+        "change",
+        function () {
+
+            if (this.value) {
+
+                const date =
+                    new Date(
+                        this.value + "T00:00:00"
+                    );
+
+
+                const month =
+                    String(
+                        date.getMonth() + 1
+                    ).padStart(2, "0");
+
+
+                const day =
+                    String(
+                        date.getDate()
+                    ).padStart(2, "0");
+
+
+                const year =
+                    date.getFullYear();
+
+
+                datePlaceholder.value =
+                    `${month}/${day}/${year}`;
+
+
+                dateWrapper.classList.add(
+                    "has-date"
+                );
+
+            }
+
+        }
+    );
+
+
+    // Reset the visible date
+    // when the booking form is reset
+    if (bookingForm) {
+
+        bookingForm.addEventListener(
+            "reset",
+            () => {
+
+                setTimeout(
+                    () => {
+
+                        datePlaceholder.value =
+                            "MM/DD/YYYY";
+
+
+                        dateWrapper.classList.remove(
+                            "has-date"
+                        );
+
+                    },
+                    0
+                );
+
+            }
+        );
+
+    }
+
+}
     // ======================================================
     // CONTACT FORM
     // ======================================================
