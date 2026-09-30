@@ -1743,6 +1743,41 @@ font-size:2rem;
     font-weight:600;
 
 }
+/* Travel date field */
+.date-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.date-field label {
+    display: none;
+}
+
+.date-field input[type="date"] {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .date-field label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .date-field input[type="date"] {
+        min-height: 48px;
+        font-size: 16px;
+    }
+}
 
 /* =====================================================
    REVIEWS
