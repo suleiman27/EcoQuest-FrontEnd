@@ -529,6 +529,27 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
+    const dateWrapper = document.querySelector('.date-input-wrapper');
+const realDateInput = document.querySelector('.real-date-input');
+const datePlaceholder = document.querySelector('.date-placeholder');
+
+if (dateWrapper && realDateInput && datePlaceholder) {
+
+    realDateInput.addEventListener('change', function () {
+
+        if (this.value) {
+            const date = new Date(this.value + 'T00:00:00');
+
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const year = date.getFullYear();
+
+            datePlaceholder.value = `${month}/${day}/${year}`;
+            dateWrapper.classList.add('has-date');
+        }
+    });
+
+}
 
 
     // ======================================================
