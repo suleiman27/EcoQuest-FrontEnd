@@ -910,16 +910,19 @@
                                 placeholder="Number of Travellers"
                                 required>
 
-                          <div class="date-field">
-                         <label for="travelDate">Travel Date</label>
+                       <div class="date-input-wrapper">
+    <input
+        type="text"
+        class="date-placeholder"
+        value="MM/DD/YYYY"
+        readonly>
 
-                          <input
-                          type="date"
-                         id="travelDate"
-                         name="travelDate"
-                          required>
-                          </div>
-
+    <input
+        type="date"
+        name="travelDate"
+        class="real-date-input"
+        required>
+</div>
                             <select
                                 name="destination"
                                 required>
