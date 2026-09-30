@@ -1,4 +1,3 @@
-
 // ======================================================
 // ECOQUEST SAFARIS
 // MAIN JAVASCRIPT
@@ -13,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const API_BASE =
         "https://ecoquest-backend-r4d4.onrender.com/api";
 
+
     // ======================================================
     // AUTH CHECK
     // ======================================================
@@ -25,9 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // ======================================================
 
     const slides =
-        document.querySelectorAll(".hero-slideshow .slide");
+        document.querySelectorAll(
+            ".hero-slideshow .slide"
+        );
 
     let currentSlide = 0;
+
 
     function showSlide(index) {
 
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+
 
     function nextSlide() {
 
@@ -56,11 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     if (slides.length > 0) {
 
         showSlide(0);
 
-        setInterval(nextSlide, 5000);
+        setInterval(
+            nextSlide,
+            5000
+        );
 
     }
 
@@ -70,41 +78,64 @@ document.addEventListener("DOMContentLoaded", () => {
     // ======================================================
 
     const navToggle =
-        document.getElementById("nav-toggle");
+        document.getElementById(
+            "nav-toggle"
+        );
 
     const navLinks =
-        document.getElementById("nav-links");
+        document.getElementById(
+            "nav-links"
+        );
+
 
     if (navToggle && navLinks) {
 
-        navToggle.addEventListener("click", () => {
+        navToggle.addEventListener(
+            "click",
+            () => {
 
-            navLinks.classList.toggle("active");
+                navLinks.classList.toggle(
+                    "active"
+                );
 
-            const expanded =
-                navToggle.getAttribute("aria-expanded") === "true";
 
-            navToggle.setAttribute(
-                "aria-expanded",
-                !expanded
-            );
+                const expanded =
+                    navToggle.getAttribute(
+                        "aria-expanded"
+                    ) === "true";
 
-        });
+
+                navToggle.setAttribute(
+                    "aria-expanded",
+                    !expanded
+                );
+
+            }
+        );
+
 
         document
-            .querySelectorAll(".nav-links a")
+            .querySelectorAll(
+                ".nav-links a"
+            )
             .forEach(link => {
 
-                link.addEventListener("click", () => {
+                link.addEventListener(
+                    "click",
+                    () => {
 
-                    navLinks.classList.remove("active");
+                        navLinks.classList.remove(
+                            "active"
+                        );
 
-                    navToggle.setAttribute(
-                        "aria-expanded",
-                        false
-                    );
 
-                });
+                        navToggle.setAttribute(
+                            "aria-expanded",
+                            false
+                        );
+
+                    }
+                );
 
             });
 
@@ -116,81 +147,104 @@ document.addEventListener("DOMContentLoaded", () => {
     // ======================================================
 
     const destinationPopup =
-        document.getElementById("destinationPopup");
+        document.getElementById(
+            "destinationPopup"
+        );
+
 
     const destinationData = {
 
         mara: {
 
-            title: "🦁 Masai Mara National Reserve",
+            title:
+                "🦁 Masai Mara National Reserve",
 
-            image: "images/Maasai Mara.jpeg",
+            image:
+                "images/Maasai Mara.jpeg",
 
             description:
                 "Kenya's most iconic safari destination, famous for the Big Five, endless savannahs and the spectacular Great Wildebeest Migration."
 
         },
 
+
         amboseli: {
 
-            title: "🐘 Amboseli National Park",
+            title:
+                "🐘 Amboseli National Park",
 
-            image: "images/Amboseli.jpeg",
+            image:
+                "images/Amboseli.jpeg",
 
             description:
                 "Renowned for giant elephant herds with breathtaking views of Mount Kilimanjaro, Africa's highest mountain."
 
         },
 
+
         tsavo: {
 
-            title: "🌋 Tsavo National Parks",
+            title:
+                "🌋 Tsavo National Parks",
 
-            image: "images/Tsavo East.jpeg",
+            image:
+                "images/Tsavo East.jpeg",
 
             description:
                 "Kenya's largest protected ecosystem, famous for red elephants, lava fields, lions and dramatic landscapes."
 
         },
 
+
         samburu: {
 
-            title: "🦒 Samburu National Reserve",
+            title:
+                "🦒 Samburu National Reserve",
 
-            image: "images/samburu.jpg",
+            image:
+                "images/samburu.jpg",
 
             description:
                 "A unique northern wilderness where you can spot the Samburu Special Five found nowhere else."
 
         },
 
+
         diani: {
 
-            title: "🏖 Diani Beach",
+            title:
+                "🏖 Diani Beach",
 
-            image: "images/diani.jpeg",
+            image:
+                "images/diani.jpeg",
 
             description:
                 "Relax on award-winning white sandy beaches, crystal-clear waters and luxurious beach resorts."
 
         },
 
+
         nairobi: {
 
-            title: "🦏 Nairobi National Park",
+            title:
+                "🦏 Nairobi National Park",
 
-            image: "images/nnp.jpeg",
+            image:
+                "images/nnp.jpeg",
 
             description:
                 "The world's only national park bordering a capital city, offering lions, rhinos and giraffes."
 
         },
 
+
         lakeNakuru: {
 
-            title: "🦩 Lake Nakuru National Park",
+            title:
+                "🦩 Lake Nakuru National Park",
 
-            image: "images/Lake Nakuru.jpeg",
+            image:
+                "images/Lake Nakuru.jpeg",
 
             description:
                 "Home to flamingos, endangered rhinos and spectacular Rift Valley scenery."
@@ -200,47 +254,75 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    // Update right panel when hovering
+    // ======================================================
+    // DESTINATION POPUP
+    // ======================================================
 
     document
-        .querySelectorAll(".mega-links button")
+        .querySelectorAll(
+            ".mega-links button"
+        )
         .forEach(button => {
 
-            button.addEventListener("mouseenter", () => {
+            button.addEventListener(
+                "mouseenter",
+                () => {
 
-                const place =
-                    destinationData[
-                        button.dataset.destination
-                    ];
+                    const place =
+                        destinationData[
+                            button.dataset.destination
+                        ];
 
-                if (!place || !destinationPopup) return;
 
-                destinationPopup.innerHTML = `
+                    if (
+                        !place ||
+                        !destinationPopup
+                    ) {
 
-                    <img
-                        src="${place.image}"
-                        alt="${place.title}"
-                    >
+                        return;
 
-                    <h3>${place.title}</h3>
+                    }
 
-                    <p>
-                        ${place.description}
-                    </p>
 
-                `;
+                    destinationPopup.innerHTML = `
 
-            });
+                        <img
+                            src="${place.image}"
+                            alt="${place.title}"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                        <h3>
+                            ${place.title}
+                        </h3>
+
+                        <p>
+                            ${place.description}
+                        </p>
+
+                    `;
+
+                }
+            );
 
         });
 
 
-    // Reset when leaving the entire mega menu
+    // ======================================================
+    // RESET DESTINATION POPUP
+    // ======================================================
 
     const megaMenu =
-        document.querySelector(".mega-menu");
+        document.querySelector(
+            ".mega-menu"
+        );
 
-    if (megaMenu && destinationPopup) {
+
+    if (
+        megaMenu &&
+        destinationPopup
+    ) {
 
         megaMenu.addEventListener(
             "mouseleave",
@@ -248,11 +330,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 destinationPopup.innerHTML = `
 
-                    <h3>🌍 EcoQuest Destinations</h3>
+                    <h3>
+                        🌍 EcoQuest Destinations
+                    </h3>
 
                     <p>
-                        Hover over any destination on the left
-                        to discover Kenya's most breathtaking
+                        Hover over any destination
+                        on the left to discover
+                        Kenya's most breathtaking
                         safari locations.
                     </p>
 
@@ -269,41 +354,68 @@ document.addEventListener("DOMContentLoaded", () => {
     // ======================================================
 
     const darkBtn =
-        document.getElementById("dark-mode-toggle");
+        document.getElementById(
+            "dark-mode-toggle"
+        );
+
 
     const savedTheme =
-        localStorage.getItem("theme");
+        localStorage.getItem(
+            "theme"
+        );
 
-    if (savedTheme === "dark") {
 
-        document.body.classList.add("dark");
+    if (
+        savedTheme === "dark"
+    ) {
+
+        document.body.classList.add(
+            "dark"
+        );
+
 
         if (darkBtn) {
 
-            darkBtn.textContent = "☀️";
+            darkBtn.textContent =
+                "☀️";
 
         }
 
     }
 
+
     if (darkBtn) {
 
-        darkBtn.addEventListener("click", () => {
+        darkBtn.addEventListener(
+            "click",
+            () => {
 
-            document.body.classList.toggle("dark");
+                document.body.classList.toggle(
+                    "dark"
+                );
 
-            const dark =
-                document.body.classList.contains("dark");
 
-            darkBtn.textContent =
-                dark ? "☀️" : "🌙";
+                const dark =
+                    document.body.classList.contains(
+                        "dark"
+                    );
 
-            localStorage.setItem(
-                "theme",
-                dark ? "dark" : "light"
-            );
 
-        });
+                darkBtn.textContent =
+                    dark
+                        ? "☀️"
+                        : "🌙";
+
+
+                localStorage.setItem(
+                    "theme",
+                    dark
+                        ? "dark"
+                        : "light"
+                );
+
+            }
+        );
 
     }
 
@@ -317,19 +429,26 @@ document.addEventListener("DOMContentLoaded", () => {
             ".fade-in,.fade-in-up"
         );
 
+
     const observer =
         new IntersectionObserver(
             entries => {
 
-                entries.forEach(entry => {
+                entries.forEach(
+                    entry => {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        entry.target.classList.add("show");
+                            entry.target.classList.add(
+                                "show"
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
             },
             {
@@ -337,8 +456,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-    reveals.forEach(item =>
-        observer.observe(item)
+
+    reveals.forEach(
+        item =>
+            observer.observe(item)
     );
 
 
@@ -347,7 +468,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // ======================================================
 
     const year =
-        document.getElementById("year");
+        document.getElementById(
+            "year"
+        );
+
 
     if (year) {
 
@@ -356,295 +480,335 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-// ======================================================
-// BOOKING FORM
-// ======================================================
 
-const citizenship =
-    document.getElementById("citizenship");
+    // ======================================================
+    // BOOKING FORM
+    // ======================================================
 
-const idNumber =
-    document.getElementById("idNumber");
-
-const passportNumber =
-    document.getElementById("passportNumber");
+    const citizenship =
+        document.getElementById(
+            "citizenship"
+        );
 
 
-// ======================================================
-// CITIZENSHIP
-// ======================================================
-
-if (citizenship) {
-
-    citizenship.addEventListener(
-        "change",
-        () => {
-
-            if (idNumber) {
-
-                idNumber.style.display = "none";
-
-            }
-
-            if (passportNumber) {
-
-                passportNumber.style.display = "none";
-
-            }
+    const idNumber =
+        document.getElementById(
+            "idNumber"
+        );
 
 
-            if (
-                citizenship.value === "citizen" &&
-                idNumber
-            ) {
-
-                idNumber.style.display = "block";
-
-            }
+    const passportNumber =
+        document.getElementById(
+            "passportNumber"
+        );
 
 
-            if (
-                citizenship.value === "non-citizen" &&
-                passportNumber
-            ) {
+    // ======================================================
+    // CITIZENSHIP
+    // ======================================================
 
-                passportNumber.style.display = "block";
+    if (citizenship) {
 
-            }
+        citizenship.addEventListener(
+            "change",
+            () => {
 
-        }
-    );
+                if (idNumber) {
 
-}
-
-
-// ======================================================
-// BOOKING FORM SUBMISSION
-// ======================================================
-
-const bookingForm =
-    document.getElementById("booking-form");
-
-
-if (bookingForm) {
-
-    bookingForm.addEventListener(
-        "submit",
-        async e => {
-
-            e.preventDefault();
-
-
-            const formData =
-                new FormData(bookingForm);
-
-
-            const data =
-                Object.fromEntries(
-                    formData.entries()
-                );
-
-
-            console.log(
-                "Booking data being sent:",
-                data
-            );
-
-
-            try {
-
-                const response =
-                    await fetch(
-                        `${API_BASE}/bookings`,
-                        {
-                            method: "POST",
-
-                            headers: {
-                                "Content-Type":
-                                    "application/json"
-                            },
-
-                            body:
-                                JSON.stringify(data)
-                        }
-                    );
-
-
-                const result =
-                    await response.json();
-
-
-                console.log(
-                    "Booking response:",
-                    result
-                );
-
-
-                if (
-                    response.ok &&
-                    (
-                        result.success ||
-                        !result.error
-                    )
-                ) {
-
-                    alert(
-                        "Your safari booking has been received. We will contact you shortly."
-                    );
-
-
-                    bookingForm.reset();
-
-
-                    if (idNumber) {
-
-                        idNumber.style.display =
-                            "none";
-
-                    }
-
-
-                    if (passportNumber) {
-
-                        passportNumber.style.display =
-                            "none";
-
-                    }
-
-                } else {
-
-                    alert(
-                        result.message ||
-                        "Booking could not be completed."
-                    );
+                    idNumber.style.display =
+                        "none";
 
                 }
 
 
-            } catch (err) {
+                if (passportNumber) {
 
-                console.error(
-                    "Booking Error:",
-                    err
-                );
+                    passportNumber.style.display =
+                        "none";
 
-
-                alert(
-                    "Server unavailable. Please try again later."
-                );
-
-            }
-
-        }
-    );
-
-}
+                }
 
 
-// ======================================================
-// BOOKING DATE FIELD
-// ======================================================
+                if (
+                    citizenship.value ===
+                        "citizen" &&
+                    idNumber
+                ) {
 
-const dateWrapper =
-    document.querySelector(
-        ".date-input-wrapper"
-    );
+                    idNumber.style.display =
+                        "block";
 
-const realDateInput =
-    document.querySelector(
-        ".real-date-input"
-    );
-
-const datePlaceholder =
-    document.querySelector(
-        ".date-placeholder"
-    );
+                }
 
 
-if (
-    dateWrapper &&
-    realDateInput &&
-    datePlaceholder
-) {
+                if (
+                    citizenship.value ===
+                        "non-citizen" &&
+                    passportNumber
+                ) {
 
-    // When the user selects a date
-    realDateInput.addEventListener(
-        "change",
-        function () {
+                    passportNumber.style.display =
+                        "block";
 
-            if (this.value) {
-
-                const date =
-                    new Date(
-                        this.value + "T00:00:00"
-                    );
-
-
-                const month =
-                    String(
-                        date.getMonth() + 1
-                    ).padStart(2, "0");
-
-
-                const day =
-                    String(
-                        date.getDate()
-                    ).padStart(2, "0");
-
-
-                const year =
-                    date.getFullYear();
-
-
-                datePlaceholder.value =
-                    `${month}/${day}/${year}`;
-
-
-                dateWrapper.classList.add(
-                    "has-date"
-                );
-
-            }
-
-        }
-    );
-
-
-    // Reset the visible date
-    // when the booking form is reset
-    if (bookingForm) {
-
-        bookingForm.addEventListener(
-            "reset",
-            () => {
-
-                setTimeout(
-                    () => {
-
-                        datePlaceholder.value =
-                            "MM/DD/YYYY";
-
-
-                        dateWrapper.classList.remove(
-                            "has-date"
-                        );
-
-                    },
-                    0
-                );
+                }
 
             }
         );
 
     }
 
-}
+
+    // ======================================================
+    // BOOKING FORM SUBMISSION
+    // ======================================================
+
+    const bookingForm =
+        document.getElementById(
+            "booking-form"
+        );
+
+
+    if (bookingForm) {
+
+        bookingForm.addEventListener(
+            "submit",
+            async e => {
+
+                e.preventDefault();
+
+
+                const formData =
+                    new FormData(
+                        bookingForm
+                    );
+
+
+                const data =
+                    Object.fromEntries(
+                        formData.entries()
+                    );
+
+
+                console.log(
+                    "Booking data being sent:",
+                    data
+                );
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            `${API_BASE}/bookings`,
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body:
+                                    JSON.stringify(
+                                        data
+                                    )
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    console.log(
+                        "Booking response:",
+                        result
+                    );
+
+
+                    if (
+                        response.ok &&
+                        (
+                            result.success ||
+                            !result.error
+                        )
+                    ) {
+
+                        alert(
+                            "Your safari booking has been received. We will contact you shortly."
+                        );
+
+
+                        bookingForm.reset();
+
+
+                        if (idNumber) {
+
+                            idNumber.style.display =
+                                "none";
+
+                        }
+
+
+                        if (passportNumber) {
+
+                            passportNumber.style.display =
+                                "none";
+
+                        }
+
+                    } else {
+
+                        alert(
+                            result.message ||
+                            "Booking could not be completed."
+                        );
+
+                    }
+
+
+                } catch (err) {
+
+                    console.error(
+                        "Booking Error:",
+                        err
+                    );
+
+
+                    alert(
+                        "Server unavailable. Please try again later."
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    // ======================================================
+    // BOOKING DATE FIELD
+    // ======================================================
+
+    const dateWrapper =
+        document.querySelector(
+            ".date-input-wrapper"
+        );
+
+
+    const realDateInput =
+        document.querySelector(
+            ".real-date-input"
+        );
+
+
+    const datePlaceholder =
+        document.querySelector(
+            ".date-placeholder"
+        );
+
+
+    if (
+        dateWrapper &&
+        realDateInput &&
+        datePlaceholder
+    ) {
+
+        // --------------------------------------------------
+        // WHEN USER SELECTS A DATE
+        // --------------------------------------------------
+
+        realDateInput.addEventListener(
+            "change",
+            function () {
+
+                if (this.value) {
+
+                    const date =
+                        new Date(
+                            this.value +
+                            "T00:00:00"
+                        );
+
+
+                    const month =
+                        String(
+                            date.getMonth() + 1
+                        ).padStart(
+                            2,
+                            "0"
+                        );
+
+
+                    const day =
+                        String(
+                            date.getDate()
+                        ).padStart(
+                            2,
+                            "0"
+                        );
+
+
+                    const year =
+                        date.getFullYear();
+
+
+                    datePlaceholder.value =
+                        `${month}/${day}/${year}`;
+
+
+                    dateWrapper.classList.add(
+                        "has-date"
+                    );
+
+                }
+
+            }
+        );
+
+
+        // --------------------------------------------------
+        // RESET VISIBLE DATE
+        // --------------------------------------------------
+
+        if (bookingForm) {
+
+            bookingForm.addEventListener(
+                "reset",
+                () => {
+
+                    setTimeout(
+                        () => {
+
+                            datePlaceholder.value =
+                                "MM/DD/YYYY";
+
+
+                            dateWrapper.classList.remove(
+                                "has-date"
+                            );
+
+                        },
+                        0
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+
     // ======================================================
     // CONTACT FORM
     // ======================================================
 
     const contactForm =
-        document.getElementById("contact-form");
+        document.getElementById(
+            "contact-form"
+        );
 
 
     if (contactForm) {
@@ -678,7 +842,9 @@ if (
                                 },
 
                                 body:
-                                    JSON.stringify(data)
+                                    JSON.stringify(
+                                        data
+                                    )
                             }
                         );
 
@@ -733,7 +899,9 @@ if (
     // ======================================================
 
     const messageBox =
-        document.getElementById("messageBox");
+        document.getElementById(
+            "messageBox"
+        );
 
 
     if (messageBox) {
@@ -775,7 +943,9 @@ if (
     // ======================================================
 
     document
-        .querySelectorAll('a[href^="#"]')
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
         .forEach(link => {
 
             link.addEventListener(
@@ -784,7 +954,9 @@ if (
 
                     const target =
                         document.querySelector(
-                            link.getAttribute("href")
+                            link.getAttribute(
+                                "href"
+                            )
                         );
 
 
@@ -809,11 +981,13 @@ if (
 
 
     // ======================================================
-    // BUTTON RIPPLE EFFECT
+    // BUTTON RIPPLE / HOVER EFFECT
     // ======================================================
 
     document
-        .querySelectorAll(".btn, button")
+        .querySelectorAll(
+            ".btn, button"
+        )
         .forEach(button => {
 
             button.addEventListener(
@@ -866,12 +1040,18 @@ if (
         );
 
 
-    if (galleryItems.length > 0) {
+    if (
+        galleryItems.length > 0
+    ) {
 
         const lightbox =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        lightbox.id = "lightbox";
+
+        lightbox.id =
+            "lightbox";
 
 
         lightbox.innerHTML = `
@@ -880,7 +1060,10 @@ if (
                 &times;
             </span>
 
-            <img class="lightbox-image">
+            <img
+                class="lightbox-image"
+                alt="Gallery image"
+            >
 
             <button class="lightbox-prev">
                 &#10094;
@@ -911,11 +1094,14 @@ if (
 
                 display: "none",
 
-                justifyContent: "center",
+                justifyContent:
+                    "center",
 
-                alignItems: "center",
+                alignItems:
+                    "center",
 
-                zIndex: "99999"
+                zIndex:
+                    "99999"
 
             }
         );
@@ -962,29 +1148,40 @@ if (
         );
 
 
-        [closeBtn, prevBtn, nextBtn]
+        [
+            closeBtn,
+            prevBtn,
+            nextBtn
+        ]
             .forEach(btn => {
 
                 Object.assign(
                     btn.style,
                     {
 
-                        position: "absolute",
+                        position:
+                            "absolute",
 
-                        color: "#fff",
+                        color:
+                            "#fff",
 
                         background:
                             "rgba(0,0,0,.35)",
 
-                        border: "none",
+                        border:
+                            "none",
 
-                        cursor: "pointer",
+                        cursor:
+                            "pointer",
 
-                        fontSize: "32px",
+                        fontSize:
+                            "32px",
 
-                        padding: "12px 18px",
+                        padding:
+                            "12px 18px",
 
-                        borderRadius: "50%"
+                        borderRadius:
+                            "50%"
 
                     }
                 );
@@ -992,22 +1189,33 @@ if (
             });
 
 
-        closeBtn.style.top = "25px";
+        closeBtn.style.top =
+            "25px";
 
-        closeBtn.style.right = "35px";
+
+        closeBtn.style.right =
+            "35px";
 
 
-        prevBtn.style.left = "30px";
+        prevBtn.style.left =
+            "30px";
 
-        prevBtn.style.top = "50%";
+
+        prevBtn.style.top =
+            "50%";
+
 
         prevBtn.style.transform =
             "translateY(-50%)";
 
 
-        nextBtn.style.right = "30px";
+        nextBtn.style.right =
+            "30px";
 
-        nextBtn.style.top = "50%";
+
+        nextBtn.style.top =
+            "50%";
+
 
         nextBtn.style.transform =
             "translateY(-50%)";
@@ -1016,13 +1224,20 @@ if (
         let currentIndex = 0;
 
 
+        // --------------------------------------------------
+        // OPEN LIGHTBOX
+        // --------------------------------------------------
+
         function openLightbox(index) {
 
-            currentIndex = index;
+            currentIndex =
+                index;
 
 
             image.src =
-                galleryItems[index].src;
+                galleryItems[
+                    index
+                ].src;
 
 
             lightbox.style.display =
@@ -1035,6 +1250,10 @@ if (
         }
 
 
+        // --------------------------------------------------
+        // CLOSE LIGHTBOX
+        // --------------------------------------------------
+
         function closeLightbox() {
 
             lightbox.style.display =
@@ -1046,6 +1265,10 @@ if (
 
         }
 
+
+        // --------------------------------------------------
+        // NEXT IMAGE
+        // --------------------------------------------------
 
         function nextImage() {
 
@@ -1070,15 +1293,22 @@ if (
         }
 
 
+        // --------------------------------------------------
+        // PREVIOUS IMAGE
+        // --------------------------------------------------
+
         function previousImage() {
 
             currentIndex--;
 
 
-            if (currentIndex < 0) {
+            if (
+                currentIndex < 0
+            ) {
 
                 currentIndex =
-                    galleryItems.length - 1;
+                    galleryItems.length -
+                    1;
 
             }
 
@@ -1091,6 +1321,10 @@ if (
         }
 
 
+        // --------------------------------------------------
+        // GALLERY CLICK
+        // --------------------------------------------------
+
         galleryItems.forEach(
             (item, index) => {
 
@@ -1102,7 +1336,9 @@ if (
                     "click",
                     () => {
 
-                        openLightbox(index);
+                        openLightbox(
+                            index
+                        );
 
                     }
                 );
@@ -1110,6 +1346,10 @@ if (
             }
         );
 
+
+        // --------------------------------------------------
+        // LIGHTBOX BUTTONS
+        // --------------------------------------------------
 
         nextBtn.addEventListener(
             "click",
@@ -1129,12 +1369,17 @@ if (
         );
 
 
+        // --------------------------------------------------
+        // CLICK OUTSIDE IMAGE
+        // --------------------------------------------------
+
         lightbox.addEventListener(
             "click",
             e => {
 
                 if (
-                    e.target === lightbox
+                    e.target ===
+                    lightbox
                 ) {
 
                     closeLightbox();
@@ -1145,6 +1390,10 @@ if (
         );
 
 
+        // --------------------------------------------------
+        // KEYBOARD CONTROLS
+        // --------------------------------------------------
+
         document.addEventListener(
             "keydown",
             e => {
@@ -1152,7 +1401,11 @@ if (
                 if (
                     lightbox.style.display !==
                     "flex"
-                ) return;
+                ) {
+
+                    return;
+
+                }
 
 
                 switch (e.key) {
@@ -1186,19 +1439,18 @@ if (
 
 
     // ======================================================
-    // IMAGE HOVER / LAZY LOADING
+    // IMAGE LOADING
     // ======================================================
-
-    document
-        .querySelectorAll("img")
-        .forEach(img => {
-
-            img.setAttribute(
-                "loading",
-                "lazy"
-            );
-
-        });
+    //
+    // IMPORTANT:
+    // We intentionally DO NOT apply loading="lazy"
+    // globally here.
+    //
+    // Image loading is controlled directly from the HTML.
+    // This prevents JavaScript from overriding the hero
+    // image's loading priority.
+    //
+    // ======================================================
 
 
     // ======================================================
@@ -1206,10 +1458,14 @@ if (
     // ======================================================
 
     const topButton =
-        document.createElement("button");
+        document.createElement(
+            "button"
+        );
 
 
-    topButton.innerHTML = "↑";
+    topButton.innerHTML =
+        "↑";
+
 
     topButton.className =
         "back-to-top";
@@ -1291,7 +1547,9 @@ if (
     // ======================================================
 
     document
-        .querySelectorAll("[data-count]")
+        .querySelectorAll(
+            "[data-count]"
+        )
         .forEach(counter => {
 
             const target =
@@ -1313,14 +1571,18 @@ if (
                 setInterval(
                     () => {
 
-                        current += step;
+                        current +=
+                            step;
 
 
                         if (
-                            current >= target
+                            current >=
+                            target
                         ) {
 
-                            current = target;
+                            current =
+                                target;
+
 
                             clearInterval(
                                 timer
@@ -1373,19 +1635,28 @@ if (
         reviews = []
     ) {
 
-        if (!reviewsContainer) return;
+        if (!reviewsContainer) {
+
+            return;
+
+        }
 
 
-        reviewsContainer.innerHTML = "";
+        reviewsContainer.innerHTML =
+            "";
 
 
-        if (reviews.length === 0) {
+        if (
+            reviews.length === 0
+        ) {
 
             reviewsContainer.innerHTML = `
 
                 <div class="review-card">
 
-                    <p>No reviews yet.</p>
+                    <p>
+                        No reviews yet.
+                    </p>
 
                 </div>
 
@@ -1488,14 +1759,20 @@ if (
         if (
             !averageRating ||
             !reviewCount
-        ) return;
+        ) {
+
+            return;
+
+        }
 
 
         reviewCount.textContent =
             reviews.length;
 
 
-        if (reviews.length === 0) {
+        if (
+            reviews.length === 0
+        ) {
 
             averageRating.textContent =
                 "0.0";
@@ -1522,7 +1799,8 @@ if (
 
 
         const average =
-            total / reviews.length;
+            total /
+            reviews.length;
 
 
         averageRating.textContent =
@@ -1537,7 +1815,11 @@ if (
 
     async function loadReviews() {
 
-        if (!reviewsContainer) return;
+        if (!reviewsContainer) {
+
+            return;
+
+        }
 
 
         try {
@@ -1562,13 +1844,18 @@ if (
 
 
             const approvedReviews =
-                Array.isArray(reviews)
+                Array.isArray(
+                    reviews
+                )
                     ? reviews
                     : [];
 
 
             displayReviews(
-                approvedReviews.slice(0, 3)
+                approvedReviews.slice(
+                    0,
+                    3
+                )
             );
 
 
@@ -1785,16 +2072,20 @@ if (
         "======================================"
     );
 
+
     console.log(
         " EcoQuest Safaris Loaded Successfully "
     );
+
 
     console.log(
         "======================================"
     );
 
 
-    // Ensure destination popup is hidden initially
+    // ------------------------------------------------------
+    // DESTINATION POPUP INITIAL STATE
+    // ------------------------------------------------------
 
     if (destinationPopup) {
 
@@ -1804,7 +2095,9 @@ if (
     }
 
 
-    // Ensure footer year is always current
+    // ------------------------------------------------------
+    // FOOTER YEAR
+    // ------------------------------------------------------
 
     if (year) {
 
