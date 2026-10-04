@@ -2908,8 +2908,8 @@ select:focus{
 }
 
 .brand-logo {
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
     display: block;
 }
@@ -2918,12 +2918,12 @@ select:focus{
     display: flex;
     flex-direction: column;
     line-height: 1;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .brand-name span {
-    font-size: 0.65em;
-    margin-top: 3px;
+    font-size: 0.55em;
+    margin-top: 2px;
 }
 
 @media (max-width: 768px) {
