@@ -1,70 +1,55 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ecoquestsafari.com/</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/</loc>
-        <priority>1.0</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/tsavo-east-safari.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/tsavo-east-safari.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/tsavo-east-taita-hills.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/tsavo-east-taita-hills.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/amboseli-tsavo-east.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/amboseli-tsavo-east.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/tsavo-east-tsavo-west.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/tsavo-east-tsavo-west.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/maasai-mara-safari.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/maasai-mara-safari.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/maasai-mara-lake-nakuru.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/maasai-mara-lake-nakuru.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/lake-nakuru-amboseli.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/lake-nakuru-amboseli.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/tsavo-trilogy.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/tsavo-trilogy.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/ol-pejeta-samburu.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/ol-pejeta-samburu.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/maasai-mara-naivasha-lake-nakuru.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/maasai-mara-naivasha-lake-nakuru.html</loc>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/tsavo-east-diani.html</loc>
+  </url>
 
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/tsavo-east-diani.html</loc>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://ecoquestsafari.com/itineraries/tsavo-east-taita-hills-diani.html</loc>
-        <priority>0.8</priority>
-    </url>
-
+  <url>
+    <loc>https://ecoquestsafari.com/itineraries/tsavo-east-taita-hills-diani.html</loc>
+  </url>
 </urlset>
+
